@@ -10,4 +10,14 @@ public class Presenter {
     public void LogOutPrompt(){
         System.out.println("ByeBye\n");
     }
+
+    public void GetIntoList(){
+        System.out.println("Welcome to the Waitlist\n" +
+                "Input [a] to check current index\n"+
+                "Input [e] to exit the list\n");
+    }
+
+    public void NumCheck(){
+        System.out.println("How many people with you?\n");
+    }
 }
