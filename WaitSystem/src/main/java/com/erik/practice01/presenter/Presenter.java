@@ -3,8 +3,9 @@ package com.erik.practice01.presenter;
 public class Presenter {
     public void logInPrompt() {
         System.out.println("Welcome to our hospital.\n" +
-                        "Input [a] to join in waitlist.\n"+
-                "Input [e] to quit the system.\n");
+                        "Input [a]: join in waitlist.\n"+
+                "Input [b]: get into WaitList System\n" +
+                "Input [e]: quit the system.\n");
     }
 
     public void LogOutPrompt(){
@@ -13,11 +14,20 @@ public class Presenter {
 
     public void GetIntoList(){
         System.out.println("Welcome to the Waitlist\n" +
-                "Input [a] to check current index\n"+
-                "Input [e] to exit the list\n");
+                "Input your name please");
     }
 
-    public void NumCheck(){
-        System.out.println("How many people with you?\n");
+    public void WaitSystem(){
+        System.out.println("Input [a]: check current index\n"+
+                "Input [b]: Leave the line\n" +
+                "Input [e]: exit the list\n");
+    }
+
+    public void nameCheck(){
+        System.out.println("What's your name?\n");
+    }
+
+    public void notInLine(){
+        System.out.println("Sorry, you are not in line");
     }
 }

@@ -15,25 +15,28 @@ public class WaitSystem {
     }
 
     public void run(){
+        label:
         while(true){
             presenter.logInPrompt();
             Scanner reader = new Scanner(System.in);// Reading from System.in
             String command = reader.nextLine();
-            if(command.equals("a")){
-                presenter.NumCheck();
-                Scanner reader01 = new Scanner(System.in);
-                String num = reader.nextLine();
-                int n = Integer.parseInt(num);
-                for(int i=0; i<n; i++){
-                    usermanager.addUser();
+            switch (command) {
+                case "a": {
+                    presenter.nameCheck();
+                    Scanner reader01 = new Scanner(System.in);
+                    String name = reader.nextLine();
+                    System.out.println(name + " join in waitlsit successfully");
+                    usermanager.addUser(name);
+                    break;
                 }
-                System.out.println("Join in waitlsit successfully");
-                ListSystem listSystem = new ListSystem(usermanager);
-                listSystem.run();
-            }
-            else if(command.equals("e")){
-                presenter.LogOutPrompt();
-                break;
+                case "b": {
+                    ListSystem listSystem = new ListSystem(usermanager);
+                    listSystem.run();
+                    break;
+                }
+                case "e":
+                    presenter.LogOutPrompt();
+                    break label;
             }
 
         }

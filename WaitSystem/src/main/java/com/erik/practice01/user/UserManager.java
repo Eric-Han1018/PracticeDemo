@@ -11,16 +11,25 @@ public class UserManager {
         User.reset_list();
     }
 
-    public void addUser(){
-        User u = new User();
+    public void addUser(String name){
+        User u = new User(name);
         waitlist.offer(u);
     }
     
-    public User removeUser(){
-        return waitlist.poll();
+    public void removeUser(String name){
+        waitlist.removeIf(i -> i.getName().equals(name));
     }
 
     public int current_n(){
         return waitlist.size();
+    }
+
+    public User getUser(String name){
+        for(User i:waitlist){
+            if(i.getName().equals(name)){
+                return i;
+            }
+        }
+        return null;
     }
 }
