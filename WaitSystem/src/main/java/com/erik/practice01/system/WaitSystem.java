@@ -25,6 +25,10 @@ public class WaitSystem {
                     presenter.nameCheck();
                     Scanner reader01 = new Scanner(System.in);
                     String name = reader.nextLine();
+                    if(usermanager.checkname(name)){
+                        System.out.println("You are already in the waitlist");
+                        continue;
+                    }
                     System.out.println(name + " join in waitlsit successfully");
                     usermanager.addUser(name);
                     break;
@@ -34,9 +38,15 @@ public class WaitSystem {
                     listSystem.run();
                     break;
                 }
-                case "e":
+                case "e": {
                     presenter.LogOutPrompt();
                     break label;
+                }
+                case "DOC": {
+                    DocSystem docSystem = new DocSystem();
+                    docSystem.run();
+                    break;
+                }
             }
 
         }

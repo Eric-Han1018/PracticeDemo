@@ -14,7 +14,8 @@ public class Presenter {
 
     public void GetIntoList(){
         System.out.println("Welcome to the Waitlist\n" +
-                "Input your name please");
+                "Input your name please\n" +
+                "Or input [e] to leave\n");
     }
 
     public void WaitSystem(){
@@ -29,5 +30,14 @@ public class Presenter {
 
     public void notInLine(){
         System.out.println("Sorry, you are not in line");
+    }
+
+    public void DocSystem(){
+        System.out.println("Input [a]: call one patient\n"+
+                "Input [e]: exit the list\n");
+    }
+
+    public void printErrorMessage(Exception s) {
+        System.out.println(s.getMessage());
     }
 }

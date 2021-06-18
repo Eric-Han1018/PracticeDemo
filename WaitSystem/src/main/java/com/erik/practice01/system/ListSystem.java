@@ -1,6 +1,7 @@
 package com.erik.practice01.system;
 
 import com.erik.practice01.presenter.Presenter;
+import com.erik.practice01.user.Patient;
 import com.erik.practice01.user.User;
 import com.erik.practice01.user.UserManager;
 
@@ -24,7 +25,7 @@ public class ListSystem {
             int idx = this.userManager.current_n();
             Scanner reader = new Scanner(System.in);
             String name = reader.nextLine();
-            User user = userManager.getUser(name);
+            Patient user = userManager.getUser(name);
             if(user==null){
                 presenter.notInLine();
                 break;
@@ -40,7 +41,7 @@ public class ListSystem {
                     case "b":
                         presenter.LogOutPrompt();
                         userManager.removeUser(name);
-                        break;
+                        break label;
                     case "e":
                         return;
                 }
