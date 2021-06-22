@@ -1,6 +1,7 @@
 package com.erik.practice01.system;
 
 import com.erik.practice01.presenter.Presenter;
+import com.erik.practice01.readWrite.Write;
 import com.erik.practice01.user.UserManager;
 
 import java.util.Scanner;
@@ -31,6 +32,11 @@ public class WaitSystem {
                     }
                     System.out.println(name + " join in waitlsit successfully");
                     usermanager.addUser(name);
+                    try {
+                        Write.add_user(name);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                     break;
                 }
                 case "b": {
