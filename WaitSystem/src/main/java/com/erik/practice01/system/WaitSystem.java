@@ -42,6 +42,7 @@ public class WaitSystem {
                 case "b": {
                     ListSystem listSystem = new ListSystem(usermanager);
                     listSystem.run();
+                    System.out.println("Success!");
                     break;
                 }
                 case "e": {

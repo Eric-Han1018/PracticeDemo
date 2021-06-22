@@ -33,7 +33,8 @@ public class Presenter {
     }
 
     public void DocSystem(){
-        System.out.println("Input [a]: call one patient\n"+
+        System.out.println("Input [a]: call the next patient\n"+
+                "Input [cleat]: clear all patients information"+
                 "Input [e]: exit the list\n");
     }
 
